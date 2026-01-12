@@ -131,6 +131,135 @@ ul.navlist{
 }
 
 
+/* About Us Extra */
+
+
+        /* BUTTONS */
+        .about-btn {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .about-btn button {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            background: #ffffff;
+            color: #ec4899;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(236, 72, 153, 0.2);
+            transition: 0.3s;
+        }
+
+        .about-btn button.active,
+        .about-btn button:hover {
+            background: #ec4899;
+            color: #ffffff;
+        }
+
+        /* CONTENT */
+        .content-btn .content {
+            display: none;
+        }
+
+        .content-btn .content.active {
+            display: block;
+            animation: fade 0.4s ease;
+        }
+
+        @keyframes fade {
+            from {opacity: 0; transform: translateY(10px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        /* TEXT BOX */
+        .text-box1 {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
+        }
+
+        .text-box1 p {
+            font-size: 16px;
+            color: #be185d;
+            font-weight: 600;
+        }
+
+        .text-box1 span {
+            font-size: 14px;
+            color: #374151;
+        }
+
+        /* TIMELINE */
+        .timeline-box {
+            position: relative;
+            padding-left: 35px;
+            max-width: 800px;
+        }
+
+        .timeline-box::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, #ec4899, #f9a8d4);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item .dot {
+            position: absolute;
+            left: -1px;
+            top: 8px;
+            width: 18px;
+            height: 18px;
+            background: #ec4899;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #fce7f3;
+        }
+
+        .timeline-content {
+            background: #ffffff;
+            padding: 18px 22px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-4px);
+        }
+
+        .timeline-content h4 {
+            margin-bottom: 6px;
+            color: #be185d;
+            font-size: 16px;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .timeline-content small {
+            color: #ec4899;
+            font-weight: 600;
+        }
+
+
+
+
+
+
 /* ==================== home section css code ============================ */
 section{
     padding: 90px 8%;
@@ -261,6 +390,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 9px;
 }
 
 .bg-icon span{
@@ -284,7 +414,8 @@ section{
 .img-hero img{
     position: relative;
     width: 400px;
-    height: auto;
+    border-radius: 2000px;
+    height: 490px;
     z-index: 10;
 }
 
@@ -704,26 +835,171 @@ section{
 /* ==================== certificate section ============================ */
 
 
+.certificate {
+    padding: 80px 8%;
+    color: #fff;
+}
+
+.main-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main-text span {
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+/* Carousel */
 .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
 }
 
 .carousel-slide {
     display: flex;
-    transition: transform 1s ease;
+    gap: 25px;
 }
 
-.carousel-slide a {
-    margin-right: 20px;
+/* Certificate Card */
+.certificate {
+    padding: 90px 8%;
+    color: #fff;
 }
 
-.carousel-slide img {
-    width: 300px;
-    height: 300px;
-    border: 4px solid transparent;
-    border-radius: 5px;
+/* Section Title */
+.main-text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+
+.main-text span {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    display: block;
+    margin-top: 8px;
+}
+
+/* Carousel */
+.carousel-container {
+    overflow-x: auto;
+    padding-bottom: 30px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-slide {
+    display: flex;
+    gap: 30px;
+    padding: 10px 0;
+}
+
+/* Certificate Card */
+.cert-card {
+    position: relative;
+    min-width: 270px;
+    height: 380px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.02)
+    );
+    backdrop-filter: blur(14px);
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.5),
+        inset 0 0 0 1px rgba(255,255,255,0.08);
+    transition: 
+        transform 0.45s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.45s ease;
+}
+
+/* Glow Border Effect */
+.cert-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    padding: 1px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Image */
+.cert-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Hover Overlay */
+.cert-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(
+        to top,
+        rgba(2,6,23,0.95),
+        rgba(2,6,23,0.4),
+        transparent
+    );
+    color: #e5e7eb;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transform: translateY(100%);
+    transition: transform 0.45s ease;
+}
+
+/* Hover Effects */
+.cert-card:hover {
+    transform: translateY(-14px) scale(1.05);
+    box-shadow:
+        0 25px 60px rgba(56,189,248,0.45),
+        0 0 40px rgba(129,140,248,0.25);
+}
+
+.cert-card:hover::before {
+    opacity: 1;
+}
+
+.cert-card:hover img {
+    transform: scale(1.08);
+}
+
+.cert-card:hover .cert-overlay {
+    transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .certificate {
+        padding: 70px 6%;
+    }
+
+    .cert-card {
+        min-width: 230px;
+        height: 330px;
+    }
+
+    .main-text .heading {
+        font-size: 2.1rem;
+    }
 }
 
 
